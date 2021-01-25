@@ -1,5 +1,6 @@
 import java.util.Collection;
 import java.util.List;
+import java.util.ArrayList;
 
 public final class PID implements Controller {
 
@@ -8,7 +9,7 @@ public final class PID implements Controller {
     private double wantedValue = 0;
 
     public PID(final Controller... controllers) {
-        this.controllers = List.of(controllers);
+        this.controllers = new ArrayList<Controller>(List.of(controllers));
     }
 
     public void addController(final Controller controller) {
