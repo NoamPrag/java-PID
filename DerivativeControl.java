@@ -1,12 +1,14 @@
-public final class DerivativeControl extends Controller {
+public final class DerivativeControl implements Controller {
 
     private double prevError = 0;
     private double prevTime;
 
     private boolean firstCall = true;
 
+    private final double proportionConstant;
+
     public DerivativeControl(final double proportionConstant) {
-        super(proportionConstant);
+        this.proportionConstant = proportionConstant;
 
         prevTime = System.currentTimeMillis();
     }

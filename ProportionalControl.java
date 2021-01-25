@@ -1,7 +1,9 @@
-public final class ProportionalControl extends Controller {
+public final class ProportionalControl implements Controller {
+
+    private final double proportionConstant;
 
     public ProportionalControl(final double proportionConstant) {
-        super(proportionConstant);
+        this.proportionConstant = proportionConstant;
     }
 
     @Override

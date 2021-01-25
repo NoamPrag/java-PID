@@ -1,13 +1,15 @@
-public final class IntegralControl extends Controller {
+public final class IntegralControl implements Controller {
 
     private double zone;
     private double windup;
 
     private double accumulator = 0;
 
+    private final double proportionConstant;
+
     public IntegralControl(final double proportionConstant, final double zone,
             final double windup) {
-        super(proportionConstant);
+        this.proportionConstant = proportionConstant;
         this.zone = zone;
         this.windup = windup;
     }
