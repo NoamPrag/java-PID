@@ -1,9 +1,9 @@
 abstract class Controller {
 
-    protected final double k;
+    protected final double proportionConstant;
 
-    public Controller(final double k) {
-        this.k = k;
+    public Controller(final double proportionConstant) {
+        this.proportionConstant = proportionConstant;
     }
 
     abstract public double getOutput(final double error);

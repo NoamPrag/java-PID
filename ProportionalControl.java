@@ -1,11 +1,11 @@
-public class ProportionalControl extends Controller {
+public final class ProportionalControl extends Controller {
 
-    public ProportionalControl(final double k) {
-        super(k);
+    public ProportionalControl(final double proportionConstant) {
+        super(proportionConstant);
     }
 
     @Override
     public double getOutput(final double error) {
-        return k * error;
+        return proportionConstant * error;
     }
 }

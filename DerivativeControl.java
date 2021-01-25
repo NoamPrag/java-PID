@@ -1,12 +1,12 @@
-public class DerivativeControl extends Controller {
+public final class DerivativeControl extends Controller {
 
     private double prevError = 0;
     private double prevTime;
 
     private boolean firstCall = true;
 
-    public DerivativeControl(final double k) {
-        super(k);
+    public DerivativeControl(final double proportionConstant) {
+        super(proportionConstant);
 
         prevTime = System.currentTimeMillis();
     }
@@ -18,7 +18,7 @@ public class DerivativeControl extends Controller {
         final double dError = error - prevError;
         final double dt = currentTime - prevTime;
 
-        final double output = k * dError / dt;
+        final double output = proportionConstant * dError / dt;
 
         prevError = error;
         prevTime = currentTime;
@@ -30,7 +30,6 @@ public class DerivativeControl extends Controller {
 
         if (currentTime == prevTime)
             return 0;
-
 
         return output;
     }
